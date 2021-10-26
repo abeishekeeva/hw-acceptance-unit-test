@@ -39,11 +39,8 @@ class MoviesController < ApplicationController
   end
   
   def same_director
-    movie_id = params[:id]
-    @movies = Movie.find_by_director movie_id
-    if @movies.blank?
-      redirect_to movies_path  
-    end 
+    director_id = params[:id]
+    Movie.find director_id   
   end 
  
   private
